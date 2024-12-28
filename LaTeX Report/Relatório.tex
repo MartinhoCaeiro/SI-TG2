@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+
 \title{Comparação de Algoritmos de Categorização \\ \large Categorizar um veículo a partir das suas informações \\
 \textit{Comparation of Categorization Algorythms \\ \large Categorize a vehicle based on its information}}
 \author{
@@ -16,6 +17,10 @@
 
 \begin{document}
 \maketitle
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Resources/Logo/IPBejaESTIG.jpg}
+\end{figure}
 
 \begin{abstract}
 Este artigo apresenta um estudo para a comparação entre algoritmos de categorização de veículos. O objetivo de cada um dos 
@@ -33,83 +38,79 @@ mais informações sobre o estudo realizado. Gráficos ROC?
 
 \begin{IEEEkeywords}
 algoritmos; veículos; categorização; aprendizagem supervisionada; árvore binária; random forest; precisão; sensibilidade; especificidade;
-orange; datamining; machine learning; kagoo.
+orange; datamining; machine learning; kaggle.
 \end{IEEEkeywords}
 
 \section{Introdução}
-Este modelo fornece aos autores as principais especificações de formatação necessárias para preparar versões electrónicas dos 
-seus artigos obedecendo ao modelo IEEE. Todos os componentes padrão do artigo foram especificados por três razões: (1) facilidade 
-de uso para formatação de trabalhos individuais a serem incluídos em atas de conferências, (2) o cumprimento automático de 
-requisitos electrónicos que facilitam a produção posterior de produtos electrónicos tais como atas de conferências digitais, 
-e (3) a conformidade de estilo ao longo de um livro de atas de conferência.
+Neste artigo temos como objetivo comparar diferentes algoritmos de categorização de modo a entender qual o algoritmo mais eficiente para
+a questão que está a ser feita. Para isso, foi utilizado um dataset com informações de veículos de diferentes países, onde o objetivo é
+determinar o pais de origem dado as informações do veículo. Este dataset foi utilizado para treinar e testar os diferentes algoritmos de
+categorização, nomeadamente os algoritmos \textit{Tree}, \textit{Random Forest}, \textit{Logistic Regression} e \textit{Neural Network}.
 
-\section{Facilidade de Utilização}
+\section{Dataset}
+O dataset "Car information dataset" \cite{ref1} utilizado neste estudo foi retirado do site \textit{Kaggle} e contém informações de 
+veículos de diferentes países. Estas informações incluem a marca/modelo, a economia de combustivel, o número de cilindros, a cilindrada, 
+a potência, o peso, a aceleração, o ano de fabrico e o país de origem. Este dataset possui cerca de 400 entradas em cada uma das colunas.
 
-\subsection{Seleção do Template}
-Em primeiro lugar confirme que tem o Template correto, formatado para o tamanho correto de papel (A4).
+\section{Algoritmos de Decisão}
+Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos.
 
-\subsection{Mantenha as Especificações Corretas}
-O modelo é usado para formatar o seu artigo e definir os estilos do texto. Todas as margens, a largura das colunas, espaçamentos 
-de linha e fontes de texto são definidos e não devem ser alterados em nenhum caso.
+\subsection{Tree}
+É um modelo baseado numa estrutura hierárquica em forma de árvore. Cada nó representa uma condição ou regra 
+(geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base nessa regra. O objetivo 
+é chegar a uma decisão ou classificação no final de cada ramo (folha). É simples, interpretável e útil para 
+problemas de classificação e regressão.
 
-\section{Formatação Geral}
-Nos artigos escritos em Português ou Espanhol coloque também título, resumo e palavras-chave em Inglês como indicado.
+\subsection{Random Forest}
+Este algoritmo é um conjunto de árvores de decisão. Cria várias árvores independentes, cada uma treinada com 
+um subconjunto dos dados e das features (atributos) selecionados aleatoriamente. No final, combina os resultados 
+(por votação, na classificação, ou pela média, na regressão) para melhorar a precisão e reduzir o risco de overfitting, 
+comparado a uma única árvore.
 
-\subsection{Abreviaturas e Acrónimos}
-Definir as abreviaturas e siglas a primeira vez que são utilizadas no texto, mesmo depois de terem sido definidas no resumo. Não 
-use abreviatura no título ou títulos de secções a menos que sejam totalmente inevitáveis.
+\subsection{Logistic Regression}
+Apesar do nome, é um método usado principalmente para classificação. Modela a probabilidade de um resultado pertencente a 
+uma classe específica, usando uma função logística. É simples, rápido e eficaz em problemas de classificação binária, 
+embora também possa ser estendido para múltiplas classes.
 
-\subsection{Unidades}
-\begin{itemize}
-    \item Utilize unidades do Sistema Internacional (SI);
-    \item Evite combinar unidades SI com outros sistemas (exemplo: corrente em amperes e campo magnético em oersteds) pois gera confusão;
-    \item Use zero antes do ponto decimal: “0.25” e não “.25”.
-\end{itemize}
+\subsection{Neural Network}
+Inspiradas pelo cérebro humano, consistem em camadas de "neurónios" interligados. Cada neurónio recebe entradas, 
+aplica uma ponderação e uma função de ativação, e passa o resultado para os neurónios da camada seguinte. São altamente versáteis 
+e podem lidar com problemas complexos, como reconhecimento de imagens ou processamento de linguagem natural, mas requerem mais dados 
+e poder computacional.
 
-\section{Equações}
-As equações são uma exceção para as especificações deste modelo. Deve utilizar na equação as fontes Times New Roman e/ou Symbol. 
-Numere as equações consecutivamente utilizando parênteses encostados à direita. Exemplo:
-
-\begin{equation}
-\alpha + \beta = \chi.
-\end{equation}
-
-\section{Figuras e Tabelas}
-\subsection{Posicionamento}
-Coloque as legendas das figuras por baixo das figuras e os títulos das tabelas em cima das tabelas. Insira as figuras e 
-tabelas após serem citadas no texto. Utilize a abreviatura “Fig. 1” para se referir a figuras.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Resources/Logo/IPBejaESTIG.jpg}
-\end{figure}
 \newpage
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \begin{table}[h!]
-\caption{Título de uma Tabela Exemplo}
+\caption{Comparação de Algoritmos de Decisão}
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
-Cabeçalho de Coluna & Coluna 1 & Coluna 2 \\
+\textbf{Algoritmo de Decisão} & \textbf{Precisão (\%)} & \textbf{Tempo de Execução (s)}\\
 \hline
-Linha 1 & Conteúdo 1 & Conteúdo 2 \\
+Tree & xx & Conteúdo 2 \\
 \hline
-Linha 2 & Conteúdo 3 & Conteúdo 4 \\
+Random Forest & xx & Conteúdo 4 \\
+\hline
+Logistic Regression & xx & Conteúdo 4 \\
+\hline
+Neural Network & xx & Conteúdo 4 \\
 \hline
 \end{tabular}
 \end{table}
 
 \section{Conclusões}
-O modelo IEEE e outros modelos disponíveis facilitam o trabalho de edição de atas de conferências e a produção de material 
-científico. Utilize-o corretamente na escrita do seu artigo.
+Concluimos que a escolha do algoritmo correto é de extrema importância dado que a precisão, sensibilidade e especificidade
+deve ser garantida e que a sua eficácia em grande escala tem um grande impacto no resultado final.
 
-\section*{Agradecimentos}
-Introduza agradecimentos a entidades e pessoas que contribuíram para o trabalho. Caso a submissão para a conferência seja 
-\textit{Double-Blind}, introduza unicamente o texto \textbf{DFBR} (\textit{Deleted for Blind Review}).
+\section*{Trabalhos Relacionados}
+Os trabalhos "Automobile EDA" \cite{ref2} e "EDA CAR INFORMATION DATA" \cite{ref3} são exemplos de trabalhos relacionados com este dataset.
+Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos.
+ em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset.
 
 \begin{thebibliography}{1}
-\bibitem{ref1} G. Eason, B. Noble, and I. N. Sneddon, “On certain integrals of Lipschitz-Hankel type involving products 
-of Bessel functions,” \textit{Phil. Trans. Roy. Soc. London}, vol. A247, pp. 529–551, April 1955.
+    \bibitem{ref1} T. Elmetwally, “Car information dataset”, \textit{Kaggle}, Maio 2023.
+    \bibitem{ref2} A. Aboraida, “Automobile EDA”, \textit{Kaggle}, Setembro 2024.
+    \bibitem{ref3} V. Salodkar, “EDA CAR INFORMATION DATA”, \textit{Kaggle}, Junho 2023.
 \end{thebibliography}
 
 \end{document}
