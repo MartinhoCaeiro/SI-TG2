@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.24)  28 DEC 2024 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.24)  28 DEC 2024 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -107,14 +107,60 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
+) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen164
+\lightrulewidth=\dimen165
+\cmidrulewidth=\dimen166
+\belowrulesep=\dimen167
+\belowbottomsep=\dimen168
+\aboverulesep=\dimen169
+\abovetopsep=\dimen170
+\cmidrulesep=\dimen171
+\cmidrulekern=\dimen172
+\defaultaddspace=\dimen173
+\@cmidla=\count268
+\@cmidlb=\count269
+\@aboverulesep=\dimen174
+\@belowrulesep=\dimen175
+\@thisruleclass=\count270
+\@lastruleclass=\count271
+\@thisrulewidth=\dimen176
+) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+ (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+\caption@tempdima=\dimen177
+\captionmargin=\dimen178
+\caption@leftmargin=\dimen179
+\caption@rightmargin=\dimen180
+\caption@width=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count272
+\c@continuedfloat=\count273
 ) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count268
-\U@D=\dimen164
+\babel@savecnt=\count274
+\U@D=\dimen185
 \l@unhyphenated=\language79
  (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count269
+\bbl@dirlevel=\count275
 
 *************************************
 * Local config file bblopts.cfg used
@@ -129,10 +175,7 @@ Package babel Info: Importing font and identification data for portuguese
 (babel)             from babel-pt.ini. Reported on input line 11.
 ) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks20
-) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -143,43 +186,55 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
  (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen165
-\Gin@req@width=\dimen166
+\Gin@req@height=\dimen186
+\Gin@req@width=\dimen187
 ) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count270
+\l__color_backend_stack_int=\count276
 \l__pdf_internal_box=\box53
-) (Relatório.aux)
+) (Relatório.aux
+
+LaTeX Warning: Label `tab:conf_matrix' multiply defined.
+
+
+LaTeX Warning: Label `tab:conf_matrix' multiply defined.
+
+
+LaTeX Warning: Label `tab:conf_matrix' multiply defined.
+
+)
 \openout1 = `Relatório.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 -- Lines per column: 56 (exact).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count271
-\scratchdimen=\dimen167
+\scratchcounter=\count277
+\scratchdimen=\dimen188
 \scratchbox=\box54
-\nofMPsegments=\count272
-\nofMParguments=\count273
+\nofMPsegments=\count278
+\nofMParguments=\count279
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count274
-\MPscratchDim=\dimen168
-\MPnumerator=\count275
-\makeMPintoPDFobject=\count276
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen189
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
 \everyMPtoPDFconversion=\toks22
 ) (C:\Users\amant\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -190,23 +245,29 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <Resources/Logo/IPBejaESTIG.jpg, id=1, 501.875pt x 301.125pt>
 File: Resources/Logo/IPBejaESTIG.jpg Graphic file (type jpg)
 <use Resources/Logo/IPBejaESTIG.jpg>
-Package pdftex.def Info: Resources/Logo/IPBejaESTIG.jpg  used on input line 23.
+Package pdftex.def Info: Resources/Logo/IPBejaESTIG.jpg  used on input line 25.
 (pdftex.def)             Requested size: 258.0pt x 154.80771pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 23--24
+Overfull \hbox (6.0pt too wide) in paragraph at lines 25--26
  [][] 
  []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 69.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1{C:/Users/amant/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./Resources/Logo/IPBejaESTIG.jpg>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 87.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 87.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 87.
+Overfull \hbox (22.29471pt too wide) in paragraph at lines 155--167
+ [][] 
+ []
 
 
 ** Conference Paper **
@@ -224,17 +285,21 @@ Before submitting the final camera ready copy, remember to:
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 3263 strings out of 474486
- 60792 string characters out of 5743754
- 1947542 words of memory out of 5000000
- 25547 multiletter control sequences out of 15000+600000
- 595440 words of font info for 96 fonts, out of 8000000 for 9000
+ 4685 strings out of 474486
+ 88061 string characters out of 5743754
+ 1952542 words of memory out of 5000000
+ 26959 multiletter control sequences out of 15000+600000
+ 594823 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,356b,257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,10n,65p,378b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relatório.pdf (2 pages, 94243 bytes).
+Output written on Relatório.pdf (2 pages, 95295 bytes).
 PDF statistics:
  31 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
