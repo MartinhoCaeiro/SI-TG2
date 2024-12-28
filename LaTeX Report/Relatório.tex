@@ -22,9 +22,10 @@
 \maketitle
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{Resources/Logo/IPBejaESTIG.jpg}
+    \includegraphics[width=0.1\textwidth]{Resources/Logo/IPBejaESTIG.jpg}
 \end{figure}
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \begin{abstract}
 Este artigo apresenta um estudo para a comparação entre algoritmos de categorização de veículos. O objetivo de cada um dos 
 algoritmos é categorizar um veículo a partir das suas informações, sendo que este veículo será categorizado consoante o seu 
@@ -44,6 +45,7 @@ algoritmos; veículos; categorização; aprendizagem supervisionada; árvore bin
 orange; datamining; machine learning; kaggle.
 \end{IEEEkeywords}
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Introdução}
 Neste artigo temos como objetivo comparar diferentes algoritmos de categorização de modo a entender qual o algoritmo mais eficiente para
 a questão que está a ser feita. Para isso, foi utilizado um dataset com informações de veículos de diferentes países, onde o objetivo é
@@ -55,6 +57,7 @@ O dataset "Car information dataset" \cite{ref1} utilizado neste estudo foi retir
 veículos de diferentes países. Estas informações incluem a marca/modelo, a economia de combustivel, o número de cilindros, a cilindrada, 
 a potência, o peso, a aceleração, o ano de fabrico e o país de origem. Este dataset possui cerca de 400 entradas em cada uma das colunas.
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Algoritmos de Decisão}
 Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos.
 
@@ -63,9 +66,8 @@ Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados
 (geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base nessa regra. O objetivo 
 é chegar a uma decisão ou classificação no final de cada ramo (folha). É simples, interpretável e útil para 
 problemas de classificação e regressão.
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
-    \caption{Matriz de Confusão do Algoritmo Tree}
     \begin{tabular}{lcccc}
     \toprule
     \textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
@@ -77,19 +79,18 @@ problemas de classificação e regressão.
     \textbf{Total} & 78 & 81 & 233 & 392 \\
     \bottomrule
     \end{tabular}
-    \label{tab:conf_matrix}
+    \label{tab:conf_matrix_tree}
+    \caption{Matriz de Confusão do Algoritmo Tree}
 \end{table}
 
-
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Random Forest}
 Este algoritmo é um conjunto de árvores de decisão. Cria várias árvores independentes, cada uma treinada com 
 um subconjunto dos dados e das features (atributos) selecionados aleatoriamente. No final, combina os resultados 
 (por votação, na classificação, ou pela média, na regressão) para melhorar a precisão e reduzir o risco de overfitting, 
 comparado a uma única árvore.
-
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
-    \caption{Matriz de Confusão do Algoritmo Tree}
     \begin{tabular}{lcccc}
     \toprule
     \textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
@@ -101,16 +102,17 @@ comparado a uma única árvore.
     \textbf{Total} & 60 & 84 & 248 & 392 \\
     \bottomrule
     \end{tabular}
-    \label{tab:conf_matrix}
+    \label{tab:conf_matrix_forest}
+    \caption{Matriz de Confusão do Algoritmo Tree}
 \end{table}
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Logistic Regression}
 Apesar do nome, é um método usado principalmente para classificação. Modela a probabilidade de um resultado pertencente a 
 uma classe específica, usando uma função logística. É simples, rápido e eficaz em problemas de classificação binária, 
 embora também possa ser estendido para múltiplas classes.
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
-    \caption{Matriz de Confusão do Algoritmo Logistic Regression}
     \begin{tabular}{lcccc}
     \toprule
     \textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
@@ -122,17 +124,18 @@ embora também possa ser estendido para múltiplas classes.
     \textbf{Total} & 53 & 97 & 242 & 392 \\
     \bottomrule
     \end{tabular}
-    \label{tab:conf_matrix}
+    \label{tab:conf_matrix_logistic}
+    \caption{Matriz de Confusão do Algoritmo Logistic Regression}
 \end{table}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Neural Network}
 Inspiradas pelo cérebro humano, consistem em camadas de "neurónios" interligados. Cada neurónio recebe entradas, 
 aplica uma ponderação e uma função de ativação, e passa o resultado para os neurónios da camada seguinte. São altamente versáteis 
 e podem lidar com problemas complexos, como reconhecimento de imagens ou processamento de linguagem natural, mas requerem mais dados 
 e poder computacional.
-
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
-    \caption{Matriz de Confusão do Algoritmo Neural Network}
     \begin{tabular}{lcccc}
     \toprule
     \textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
@@ -144,14 +147,16 @@ e poder computacional.
     \textbf{Total} & 61 & 16 & 219 & 392 \\
     \bottomrule
     \end{tabular}
-    \label{tab:conf_matrix}
+    \label{tab:conf_matrix_neural}
+    \caption{Matriz de Confusão do Algoritmo Neural Network}
 \end{table}
 
-\newpage
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\begin{table}[h!]
+\section{Comparações finais}
+Como podemos visualizar na tabela e figuras abaixo, o algoritmo \textit{Random Forest} obteve os melhores resultados AUC,
+e o algoritmo Tree obteve os melhores resultados em termos de precisão, sensibilidade e especificidade.
+\begin{table}[!ht]
     \centering
-    \caption{Comparação de Resultados dos Algoritmos}
     \begin{tabular}{lcccccc}
     \toprule
     \textbf{Algoritmo} & \textbf{AUC} & \textbf{CA} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{MCC} \\
@@ -160,22 +165,41 @@ e poder computacional.
     Random Forest       & 0.934 & 0.814 & 0.812 & 0.812 & 0.814 & 0.652 \\
     Logistic Regression & 0.914 & 0.773 & 0.773 & 0.779 & 0.773 & 0.582 \\
     Neural Network      & 0.912 & 0.760 & 0.757 & 0.755 & 0.760 & 0.548 \\
-    
     \bottomrule
     \end{tabular}
     \label{tab:evaluation_results}
+    \caption{Comparação de Resultados dos Algoritmos}
 \end{table}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Resources/ROC_EUA.png}
+    \caption{Curva ROC dos Algoritmos - EUA}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Resources/ROC_EU.png}
+    \caption{Curva ROC dos Algoritmos - Europa}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Resources/ROC_JP.png}
+    \caption{Curva ROC dos Algoritmos - Japão}
+\end{figure}
+
+
+%----------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
 \section{Conclusões}
 Concluimos que a escolha do algoritmo correto é de extrema importância dado que a precisão, sensibilidade e especificidade
 deve ser garantida e que a sua eficácia em grande escala tem um grande impacto no resultado final.
 
-\section*{Trabalhos Relacionados}
+\section{Trabalhos Relacionados}
 Os trabalhos "Automobile EDA" \cite{ref2} e "EDA CAR INFORMATION DATA" \cite{ref3} são exemplos de trabalhos relacionados com este dataset.
 Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos.
  em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset.
-
-
 
 \begin{thebibliography}{1}
     \bibitem{ref1} T. Elmetwally, “Car information dataset”, \textit{Kaggle}, Maio 2023.
