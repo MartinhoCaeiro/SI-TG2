@@ -5,6 +5,9 @@
 \usepackage[portuguese]{babel}
 \usepackage{graphicx}
 \usepackage[style=apa, backend=biber]{biblatex}
+\usepackage{etoolbox}
+\renewcommand\IEEEkeywordsname{Palavras-chave}
+
 \addbibresource{Resources/referencias.bib}
 
 
@@ -33,8 +36,8 @@
 	Este artigo apresenta um estudo para a comparação entre algoritmos de categorização de veículos. O objetivo de cada um dos
 	algoritmos é categorizar um veículo a partir das suas informações, sendo que este veículo será categorizado consoante o seu
 	país de origem. Foi escolhido este tema para facilitar a nossa compreensão sobre o assunto e tornar mais agradável o estudo
-	destes algoritmos. O estudo foi realizado com base em algoritmos de aprendizagem supervisionada, nomeadamente o algoritmo
-	\textit{Binary Tree}, algoritmo \textit{Random Forest} TODO: Escolher mais algoritmos para fazer a comparação entre eles.
+	destes algoritmos. O estudo foi realizado no \textit{Orange} (\cite{orange}) com base em algoritmos de aprendizagem supervisionada, nomeadamente o algoritmo
+	\textit{Binary Tree}, algoritmo \textit{Random Forest}, algoritmo \textit{Logistic Regression} e algoritmo \textit{Neural Network}.
 	Para fazer a comparação destes, foi utilizado um dataset, com cerca de 400 entradas, onde possui informações de veículos de
 	diferentes países e este foi utilizado nos diferentes algoritmos para treinar e testar os mesmos. Este dataset, já foi alterado
 	no primeiro trabalho da Disciplina de \textit{Sistemas de Informação}, sendo ligeiramente diferente, por já ter sido tratado.
@@ -86,7 +89,15 @@ A metodologia adotada neste estudo envolveu as seguintes etapas principais:
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Algoritmos de Decisão}
-Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos.
+Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos. Cada algoritmo foi avaliado numa matriz 
+de confusão, que compara as previsões do modelo com os valores reais. As métricas que podemos retirar diretamente da matriz são:
+\begin{itemize}
+	\item \textbf{Verdadeiros Positivos:} Número de observações corretamente classificadas como positivas, podem ser observadas na diagonal principal da matriz.
+	\item \textbf{Falsos Positivos:} Número de observações incorretamente classificadas como positivas, são a soma da coluna exceto a pertencente à diagonal principal.
+	\item \textbf{Verdadeiros Negativos:} Número de observações corretamente classificadas como negativas, são a soma de todas as observações exceto a linha e coluna 
+	da classe em questão. 
+	\item \textbf{Falsos Negativos:} Número de observações incorretamente classificadas como negativas, são a soma da linha exceto a pertencente à diagonal principal.
+\end{itemize}
 
 \subsection{Tree}
 É um modelo baseado numa estrutura hierárquica em forma de árvore. Cada nó representa uma condição ou regra
@@ -177,13 +188,14 @@ e poder computacional.
 	\label{tab:conf_matrix_neural}
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
 \end{table}
-
+\newpage
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Comparações finais}
 Como podemos visualizar na tabela e figuras abaixo, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
 a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados em termos de acurácia de classificação (CA), precisão e sensibilidade.
 \begin{table}[!ht]
 	\centering
+	\resizebox{0.5\textwidth}{!}{
 	\begin{tabular}{lcccccc}
 		\toprule
 		\textbf{Algoritmo}  & \textbf{AUC} & \textbf{CA} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{MCC} \\
@@ -194,9 +206,59 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 		Logistic Regression & 0.901        & 0.760       & 0.759       & 0.763              & 0.760           & 0.560        \\
 		\bottomrule
 	\end{tabular}
+	}
 	\label{tab:evaluation_results}
 	\caption{Comparação de Resultados dos Algoritmos}
 \end{table}
+\\
+Estas métricas são importantes para avaliar o desempenho dos algoritmos, e a sua interpretação pode variar consoante o contexto do problema.
+A aplicação \textit{Orange} forneceu automaticamente estas métricas, porém detalhando cada uma delas, obtemos o seguinte:
+\subsection{Acurácia de Classificação (CA)}
+A CA é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados 
+desequilibrados.
+\begin{equation}
+	CA = \frac{TP + TN}{TP + TN + FP + FN}
+\end{equation}
+Onde TN é o número de verdadeiros negativos e FN é o número de falsos negativos.
+\subsection{Precisão}
+A precisão é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas.
+\begin{equation}
+	Precision = \frac{TP}{TP + FP}
+\end{equation}
+Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
+\subsection{Sensibilidade/Recall}
+A sensibilidade é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
+\begin{equation}
+	Recall = \frac{TP}{TP + FN}
+\end{equation}
+Onde TP é o número de verdadeiros positivos e FN é o número de falsos negativos.
+
+\subsection{F1 Score}
+O F1 Score é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e 
+falsos positivos.
+\begin{equation}
+	F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
+\end{equation}
+Onde Precision é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas e Recall 
+é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
+
+
+\subsection{Coeficiente de Correlação de Matthews (MCC)}
+O MCC é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
+\begin{equation}
+	MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
+\end{equation}
+Onde TP é o número de verdadeiros positivos, TN é o número de verdadeiros negativos, FP é o número de falsos positivos e FN é o número de falsos negativos.
+
+\subsection{Área sobre a Curva (AUC)}
+A AUC é uma métrica que avalia a capacidade do modelo de distinguir entre classes positivas e negativas. Quanto maior o valor, melhor o desempenho do modelo.
+Esta métrica possuí a seguinte formulação:
+\begin{equation}
+	AUC = \frac{1 + TP - FP}{2}
+\end{equation}
+Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
+
+Nas imagens seguintes, é possível visualizar as curvas ROC dos diferentes algoritmos, para as diferentes regiões de origem dos veículos.
 
 \begin{figure}[!ht]
 	\centering
@@ -236,7 +298,7 @@ Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{
 Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
 em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
 um estudo mais rigoroso.
-
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \printbibliography
 
 \end{document}

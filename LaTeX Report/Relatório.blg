@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'Relatório.blg'
+[155] biber-MSWIN64:340> INFO - === 
+[207] Biber.pm:419> INFO - Reading 'Relatório.bcf'
+[388] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[416] Biber.pm:4419> INFO - Processing section 0
+[432] Biber.pm:4610> INFO - Looking for bibtex file 'Resources/referencias.bib' for section 0
+[495] bibtex.pm:1713> INFO - LaTeX decoding ...
+[506] bibtex.pm:1519> INFO - Found BibTeX data source 'Resources/referencias.bib'
+[575] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[575] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[575] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'pt-PT'
+[575] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-PT'
+[591] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[591] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[591] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'pt-PT'
+[591] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-PT'
+[603] bbl.pm:660> INFO - Writing 'Relatório.bbl' with encoding 'UTF-8'
+[609] bbl.pm:763> INFO - Output to Relatório.bbl
