@@ -4,6 +4,9 @@
 \usepackage{caption}
 \usepackage[portuguese]{babel}
 \usepackage{graphicx}
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{Resources/referencias.bib}
+
 
 \captionsetup[table]{labelformat=default, labelsep=period, textfont=bf}
 \title{Comparação de Algoritmos de Categorização \\ \large Categorizar um veículo a partir das suas informações \\
@@ -229,15 +232,11 @@ pode não ser representativo o suficiente para generalizações em larga escala.
 (mais veículos de origem norte-americana) podem ter influenciado os resultados.
 
 \section{Trabalhos Relacionados}
-Os trabalhos "Automobile EDA" \cite{ref2} e "EDA CAR INFORMATION DATA" \cite{ref3} são exemplos de trabalhos relacionados com este dataset.
+Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{ref3}) são exemplos de trabalhos relacionados com este dataset.
 Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
 em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
 um estudo mais rigoroso.
 
-\begin{thebibliography}{1}
-	\bibitem{ref1} T. Elmetwally, “Car information dataset”, \textit{Kaggle}, Maio 2023.
-	\bibitem{ref2} A. Aboraida, “Automobile EDA”, \textit{Kaggle}, Setembro 2024.
-	\bibitem{ref3} V. Salodkar, “EDA CAR INFORMATION DATA”, \textit{Kaggle}, Junho 2023.
-\end{thebibliography}
+\printbibliography
 
 \end{document}
