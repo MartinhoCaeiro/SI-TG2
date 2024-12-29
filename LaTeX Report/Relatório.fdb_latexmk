@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relatório"] 1735489943.04992 "Relatório.bcf" "Relatório.bbl" "Relatório" 1735489968.06518 0
-  "Relatório.bcf" 1735489967 133066 ffbb41097db5386f48fa82f84d1ff2fc "pdflatex"
+["biber Relatório"] 1735489943.04992 "Relatório.bcf" "Relatório.bbl" "Relatório" 1735490128.97613 0
+  "Relatório.bcf" 1735490128 133066 ffbb41097db5386f48fa82f84d1ff2fc "pdflatex"
   "Resources/referencias.bib" 1735489607 734 ff811f4dded53c5b326aa9afab764e04 ""
   (generated)
   "Relatório.bbl"
   "Relatório.blg"
   (rewritten before read)
-["pdflatex"] 1735489966.10364 "c:/Users/amant/OneDrive - Instituto Politecnico de Beja/Relatórios-Trabalhos/3º ano/1º Semestre/SI/SI-TG2/LaTeX Report/Relatório.tex" "Relatório.pdf" "Relatório" 1735489968.06678 0
+["pdflatex"] 1735490127.20443 "c:/Users/amant/OneDrive - Instituto Politecnico de Beja/Relatórios-Trabalhos/3º ano/1º Semestre/SI/SI-TG2/LaTeX Report/Relatório.tex" "Relatório.pdf" "Relatório" 1735490128.97737 0
   "C:/Users/amant/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735489069 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/amant/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729788026 24225047 c840c5c21c3622144b758536a5ca6fed ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -81,15 +81,15 @@
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/amant/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "Relatório.aux" 1735489967 3768 7ca3d2744de15beac493f522590270cc "pdflatex"
+  "Relatório.aux" 1735490128 3768 7ca3d2744de15beac493f522590270cc "pdflatex"
   "Relatório.bbl" 1735489946 8859 f07ea7796e1032c0bb6b7a7a5f612620 "biber Relatório"
-  "Relatório.run.xml" 1735489967 2418 8e7c60bf386275be23e181bc6665452e "pdflatex"
-  "Relatório.tex" 1735489965 15671 5f7c42bfeeee63f455cbe18281bcaa53 ""
+  "Relatório.run.xml" 1735490128 2418 8e7c60bf386275be23e181bc6665452e "pdflatex"
+  "Relatório.tex" 1735490124 15673 4964eaa1d4908bc6a60633dc2f5d713c ""
   "Resources/Logo/IPBejaESTIG.jpg" 1734567000 24524 8256cc09fbb9140893a7ec292a0eb389 ""
   "Resources/ROC_EU.png" 1735486228 57364 6c173cb1441dd78618526d87d0afbb77 ""
   "Resources/ROC_EUA.png" 1735486318 43981 1065e1d6082701c24e8b51a235dcdf14 ""
   "Resources/ROC_JP.png" 1735486303 50975 b09bcdabf7a49ffc871cd84c71115051 ""
-  "c:/Users/amant/OneDrive - Instituto Politecnico de Beja/Relatórios-Trabalhos/3º ano/1º Semestre/SI/SI-TG2/LaTeX Report/Relatório.tex" 1735489965 15671 5f7c42bfeeee63f455cbe18281bcaa53 ""
+  "c:/Users/amant/OneDrive - Instituto Politecnico de Beja/Relatórios-Trabalhos/3º ano/1º Semestre/SI/SI-TG2/LaTeX Report/Relatório.tex" 1735490124 15673 4964eaa1d4908bc6a60633dc2f5d713c ""
   (generated)
   "Relatório.aux"
   "Relatório.bcf"

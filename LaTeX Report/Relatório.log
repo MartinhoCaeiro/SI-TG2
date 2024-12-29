@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.24)  29 DEC 2024 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.24)  29 DEC 2024 16:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -541,11 +541,6 @@ File: Resources/Logo/IPBejaESTIG.jpg Graphic file (type jpg)
 Package pdftex.def Info: Resources/Logo/IPBejaESTIG.jpg  used on input line 28.
 (pdftex.def)             Requested size: 206.39685pt x 123.8388pt.
 
-Underfull \hbox (badness 2762) in paragraph at lines 67--75
-[]\OT1/ptm/m/n/10 O da-ta-set "Car in-for-ma-tion da-ta-set"[]Elmetwally, 2023
- []
-
-
 Underfull \hbox (badness 4634) in paragraph at lines 67--75
 \OT1/ptm/m/n/10 uti-li-zado neste es-tudo foi re-ti-rado do site \OT1/ptm/m/it/10 Kag-gle \OT1/ptm/m/n/10 e
  []
@@ -605,15 +600,15 @@ Package logreq Info: Writing requests to 'Relatório.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13298 strings out of 474486
- 259800 string characters out of 5743754
+ 13297 strings out of 474486
+ 259780 string characters out of 5743754
  1958542 words of memory out of 5000000
- 35479 multiletter control sequences out of 15000+600000
+ 35478 multiletter control sequences out of 15000+600000
  593687 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,10n,81p,807b,2809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/amant/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relatório.pdf (3 pages, 219572 bytes).
+Output written on Relatório.pdf (3 pages, 219570 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
