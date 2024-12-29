@@ -4,12 +4,12 @@
 \usepackage{caption}
 \usepackage[portuguese]{babel}
 \usepackage{graphicx}
+\usepackage{csquotes}
 \usepackage[style=apa, backend=biber]{biblatex}
 \usepackage{etoolbox}
+\usepackage{csquotes}
 \renewcommand\IEEEkeywordsname{Palavras-chave}
-
 \addbibresource{Resources/referencias.bib}
-
 
 \captionsetup[table]{labelformat=default, labelsep=period, textfont=bf}
 \title{Comparação de Algoritmos de Categorização \\ \large Categorizar um veículo a partir das suas informações \\
@@ -87,18 +87,18 @@ A metodologia adotada neste estudo envolveu as seguintes etapas principais:
 	\item \textbf{Análise dos resultados:} Os resultados foram analisados de forma qualitativa e quantitativa, destacando os pontos fortes e fracos de cada modelo.
 \end{enumerate}
 
-%----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Algoritmos de Decisão}
-Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos. Cada algoritmo foi avaliado numa matriz 
+Nesta secção, vamos apresentar os diferentes algoritmos de decisão utilizados para a categorização dos veículos. Cada algoritmo foi avaliado numa matriz
 de confusão, que compara as previsões do modelo com os valores reais. As métricas que podemos retirar diretamente da matriz são:
 \begin{itemize}
 	\item \textbf{Verdadeiros Positivos:} Número de observações corretamente classificadas como positivas, podem ser observadas na diagonal principal da matriz.
 	\item \textbf{Falsos Positivos:} Número de observações incorretamente classificadas como positivas, são a soma da coluna exceto a pertencente à diagonal principal.
-	\item \textbf{Verdadeiros Negativos:} Número de observações corretamente classificadas como negativas, são a soma de todas as observações exceto a linha e coluna 
-	da classe em questão. 
+	\item \textbf{Verdadeiros Negativos:} Número de observações corretamente classificadas como negativas, são a soma de todas as observações exceto a linha e coluna
+	      da classe em questão.
 	\item \textbf{Falsos Negativos:} Número de observações incorretamente classificadas como negativas, são a soma da linha exceto a pertencente à diagonal principal.
 \end{itemize}
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Tree}
 É um modelo baseado numa estrutura hierárquica em forma de árvore. Cada nó representa uma condição ou regra
 (geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base nessa regra. O objetivo
@@ -189,6 +189,7 @@ e poder computacional.
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
 \end{table}
 \newpage
+
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Comparações finais}
 Como podemos visualizar na tabela e figuras abaixo, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
@@ -196,25 +197,27 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 \begin{table}[!ht]
 	\centering
 	\resizebox{0.5\textwidth}{!}{
-	\begin{tabular}{lcccccc}
-		\toprule
-		\textbf{Algoritmo}  & \textbf{AUC} & \textbf{CA} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{MCC} \\
-		\midrule
-		Tree                & 0.876        & 0.839       & 0.841       & 0.843              & 0.839           & 0.706        \\
-		Random Forest       & 0.943        & 0.827       & 0.823       & 0.822              & 0.827           & 0.676        \\
-		Neural Network      & 0.917        & 0.781       & 0.778       & 0.782              & 0.781           & 0.593        \\
-		Logistic Regression & 0.901        & 0.760       & 0.759       & 0.763              & 0.760           & 0.560        \\
-		\bottomrule
-	\end{tabular}
+		\begin{tabular}{lcccccc}
+			\toprule
+			\textbf{Algoritmo}  & \textbf{AUC} & \textbf{CA} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{MCC} \\
+			\midrule
+			Tree                & 0.876        & 0.839       & 0.841       & 0.843              & 0.839           & 0.706        \\
+			Random Forest       & 0.943        & 0.827       & 0.823       & 0.822              & 0.827           & 0.676        \\
+			Neural Network      & 0.917        & 0.781       & 0.778       & 0.782              & 0.781           & 0.593        \\
+			Logistic Regression & 0.901        & 0.760       & 0.759       & 0.763              & 0.760           & 0.560        \\
+			\bottomrule
+		\end{tabular}
 	}
 	\label{tab:evaluation_results}
 	\caption{Comparação de Resultados dos Algoritmos}
 \end{table}
 \\
+
+%----------------------------------------------------------------------------------------------------------------------------------------------
 Estas métricas são importantes para avaliar o desempenho dos algoritmos, e a sua interpretação pode variar consoante o contexto do problema.
 A aplicação \textit{Orange} forneceu automaticamente estas métricas, porém detalhando cada uma delas, obtemos o seguinte:
 \subsection{Acurácia de Classificação (CA)}
-A CA é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados 
+A CA é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados
 desequilibrados.
 \begin{equation}
 	CA = \frac{TP + TN}{TP + TN + FP + FN}
@@ -233,15 +236,15 @@ A sensibilidade é a proporção de observações corretamente classificadas com
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FN é o número de falsos negativos.
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{F1 Score}
-O F1 Score é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e 
+O F1 Score é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e
 falsos positivos.
 \begin{equation}
 	F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
 \end{equation}
-Onde Precision é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas e Recall 
+Onde Precision é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas e Recall
 é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
-
 
 \subsection{Coeficiente de Correlação de Matthews (MCC)}
 O MCC é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
@@ -258,6 +261,7 @@ Esta métrica possuí a seguinte formulação:
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
 
+%----------------------------------------------------------------------------------------------------------------------------------------------
 Nas imagens seguintes, é possível visualizar as curvas ROC dos diferentes algoritmos, para as diferentes regiões de origem dos veículos.
 
 \begin{figure}[!ht]
@@ -298,6 +302,7 @@ Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{
 Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
 em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
 um estudo mais rigoroso.
+
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \printbibliography
 
