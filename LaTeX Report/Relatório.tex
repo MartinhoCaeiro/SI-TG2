@@ -113,8 +113,9 @@ nessa regra. O objetivo é chegar a uma decisão ou classificação no final de 
 		\textbf{Total}          & 72               & 81             & 239          & 392            \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:conf_matrix_tree}
 	\caption{Matriz de Confusão do Algoritmo Tree}
+	\label{tab:conf_matrix_tree}
+	
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
@@ -136,8 +137,9 @@ overfitting, comparado a uma única árvore.
 		\textbf{Total}          & 56               & 88             & 248          & 392            \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:conf_matrix_forest}
 	\caption{Matriz de Confusão do Algoritmo Tree}
+	\label{tab:conf_matrix_forest}
+
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,8 +160,9 @@ em problemas de classificação binária, embora também possa ser estendido par
 		\textbf{Total}          & 54               & 98             & 242          & 392            \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:conf_matrix_logistic}
 	\caption{Matriz de Confusão do Algoritmo Logistic Regression}
+	\label{tab:conf_matrix_logistic}
+
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,8 +184,9 @@ mas requerem mais dados e poder computacional.
 		\textbf{Total}          & 50               & 96             & 246          & 392            \\
 		\bottomrule
 	\end{tabular}
-	\label{tab:conf_matrix_neural}
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
+	\label{tab:conf_matrix_neural}
+
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
@@ -203,8 +207,9 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 			\bottomrule
 		\end{tabular}
 	}
-	\label{tab:evaluation_results}
 	\caption{Comparação de Resultados dos Algoritmos}
+	\label{tab:evaluation_results}
+
 \end{table}
 \\
 
@@ -260,22 +265,26 @@ Onde TP é o número de verdadeiros positivos e FP é o número de falsos positi
 %----------------------------------------------------------------------------------------------------------------------------------------------
 Nas imagens seguintes, é possível visualizar as curvas ROC dos diferentes algoritmos, para as diferentes regiões de origem dos veículos.
 
+Na imagem \ref{fig:roc_eua}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem nos EUA.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_EUA.png}
 	\caption{Curva ROC dos Algoritmos - EUA}
+	\label{fig:roc_eua}
 \end{figure}
-
+Na imagem \ref{fig:roc_eu}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem na Europa.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_EU.png}
 	\caption{Curva ROC dos Algoritmos - Europa}
+	\label{fig:roc_eu}
 \end{figure}
-
+Na imagem \ref{fig:roc_jp}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem no Japão.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_JP.png}
 	\caption{Curva ROC dos Algoritmos - Japão}
+	\label{fig:roc_jp}
 \end{figure}
 \newpage
 
