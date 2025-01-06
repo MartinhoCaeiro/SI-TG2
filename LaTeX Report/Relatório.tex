@@ -26,10 +26,6 @@
 
 \begin{document}
 \maketitle
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.4\textwidth]{Resources/Logo/IPBejaESTIG.jpg}
-\end{figure}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \begin{abstract}
@@ -100,10 +96,10 @@ de confusão, que compara as previsões do modelo com os valores reais. As métr
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Tree}
-É um modelo baseado numa estrutura hierárquica em forma de árvore. Cada nó representa uma condição ou regra
-(geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base nessa regra. O objetivo
-é chegar a uma decisão ou classificação no final de cada ramo (folha). É simples, interpretável e útil para
-problemas de classificação e regressão.
+É um modelo baseado numa estrutura hierárquica em forma de árvore, como é possivel ver na tabela \ref{tab:conf_matrix_tree}.
+Cada nó representa uma condição ou regra (geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base
+nessa regra. O objetivo é chegar a uma decisão ou classificação no final de cada ramo (folha). É simples, interpretável e
+útil para problemas de classificação e regressão.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lcccc}
@@ -123,10 +119,10 @@ problemas de classificação e regressão.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Random Forest}
-Este algoritmo é um conjunto de árvores de decisão. Cria várias árvores independentes, cada uma treinada com
-um subconjunto dos dados e das features (atributos) selecionados aleatoriamente. No final, combina os resultados
-(por votação, na classificação, ou pela média, na regressão) para melhorar a precisão e reduzir o risco de overfitting,
-comparado a uma única árvore.
+Este algoritmo é um conjunto de árvores de decisão, como é possivel ver na tabela \ref{tab:conf_matrix_forest}. Cria várias árvores
+independentes, cada uma treinada com um subconjunto dos dados e das features (atributos) selecionados aleatoriamente. No final,
+combina os resultados (por votação, na classificação, ou pela média, na regressão) para melhorar a precisão e reduzir o risco de
+overfitting, comparado a uma única árvore.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lcccc}
@@ -146,9 +142,9 @@ comparado a uma única árvore.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Logistic Regression}
-Apesar do nome, é um método usado principalmente para classificação. Modela a probabilidade de um resultado pertencente a
-uma classe específica, usando uma função logística. É simples, rápido e eficaz em problemas de classificação binária,
-embora também possa ser estendido para múltiplas classes.
+Apesar do nome, é um método usado principalmente para classificação, , como é possivel ver na tabela \ref{tab:conf_matrix_logistic}.
+Modela a probabilidade de um resultado pertencente a uma classe específica, usando uma função logística. É simples, rápido e eficaz
+em problemas de classificação binária, embora também possa ser estendido para múltiplas classes.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lcccc}
@@ -168,10 +164,10 @@ embora também possa ser estendido para múltiplas classes.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Neural Network}
-Inspiradas pelo cérebro humano, consistem em camadas de "neurónios" interligados. Cada neurónio recebe entradas,
-aplica uma ponderação e uma função de ativação, e passa o resultado para os neurónios da camada seguinte. São altamente versáteis
-e podem lidar com problemas complexos, como reconhecimento de imagens ou processamento de linguagem natural, mas requerem mais dados
-e poder computacional.
+Inspiradas pelo cérebro humano, consistem em camadas de "neurónios" interligados, como é possivel ver na tabela \ref{tab:conf_matrix_neural}.
+Cada neurónio recebe entradas, aplica uma ponderação e uma função de ativação, e passa o resultado para os neurónios da camada seguinte.
+São altamente versáteis e podem lidar com problemas complexos, como reconhecimento de imagens ou processamento de linguagem natural,
+mas requerem mais dados e poder computacional.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lcccc}
@@ -188,11 +184,10 @@ e poder computacional.
 	\label{tab:conf_matrix_neural}
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
 \end{table}
-\newpage
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Comparações finais}
-Como podemos visualizar na tabela e figuras abaixo, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
+Como podemos visualizar na tabela \ref{tab:evaluation_results}, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
 a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados em termos de acurácia de classificação (CA), precisão e sensibilidade.
 \begin{table}[!ht]
 	\centering
@@ -217,20 +212,20 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 Estas métricas são importantes para avaliar o desempenho dos algoritmos, e a sua interpretação pode variar consoante o contexto do problema.
 A aplicação \textit{Orange} forneceu automaticamente estas métricas, porém detalhando cada uma delas, obtemos o seguinte:
 \subsection{Acurácia de Classificação (CA)}
-A CA é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados
+A CA, como podemos visualizar na equação 1, é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados
 desequilibrados.
 \begin{equation}
 	CA = \frac{TP + TN}{TP + TN + FP + FN}
 \end{equation}
 Onde TN é o número de verdadeiros negativos e FN é o número de falsos negativos.
 \subsection{Precisão}
-A precisão é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas.
+A precisão, como podemos visualizar na equação 2, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas.
 \begin{equation}
 	Precision = \frac{TP}{TP + FP}
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
 \subsection{Sensibilidade/Recall}
-A sensibilidade é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
+A sensibilidade, como podemos visualizar na equação 3, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
 \begin{equation}
 	Recall = \frac{TP}{TP + FN}
 \end{equation}
@@ -238,7 +233,7 @@ Onde TP é o número de verdadeiros positivos e FN é o número de falsos negati
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{F1 Score}
-O F1 Score é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e
+O F1 Score, como podemos visualizar na equação 4, é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e
 falsos positivos.
 \begin{equation}
 	F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
@@ -247,7 +242,7 @@ Onde Precision é a proporção de observações corretamente classificadas como
 é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
 
 \subsection{Coeficiente de Correlação de Matthews (MCC)}
-O MCC é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
+O MCC, como podemos visualizar na equação 5, é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
 \begin{equation}
 	\footnotesize
 	MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
@@ -255,7 +250,7 @@ O MCC é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfei
 Onde TP é o número de verdadeiros positivos, TN é o número de verdadeiros negativos, FP é o número de falsos positivos e FN é o número de falsos negativos.
 
 \subsection{Área sobre a Curva (AUC)}
-A AUC é uma métrica que avalia a capacidade do modelo de distinguir entre classes positivas e negativas. Quanto maior o valor, melhor o desempenho do modelo.
+A AUC, como podemos visualizar na equação 6, é uma métrica que avalia a capacidade do modelo de distinguir entre classes positivas e negativas. Quanto maior o valor, melhor o desempenho do modelo.
 Esta métrica possuí a seguinte formulação:
 \begin{equation}
 	AUC = \frac{1 + TP - FP}{2}
@@ -282,10 +277,15 @@ Nas imagens seguintes, é possível visualizar as curvas ROC dos diferentes algo
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_JP.png}
 	\caption{Curva ROC dos Algoritmos - Japão}
 \end{figure}
-
+\newpage
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\newpage
+\section{Trabalhos Relacionados}
+Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{ref3}) são exemplos de trabalhos relacionados com este dataset.
+Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
+em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
+um estudo mais rigoroso.
+
 \section{Conclusões}
 Concluimos que embora o algoritmo \textit{Tree} seja fácil de interpretar, apresenta limitações em datasets com alta variabilidade,
 onde tende a criar divisões muito específicas, resultando em overfitting. Por outro lado, o \textit{Random Forest}, ao agregar várias
@@ -297,12 +297,6 @@ a precisão, sensibilidade e especificidade deve ser garantida e que a sua efic�
 No entanto, é importante também destacar algumas limitações do estudo. Primeiramente, o tamanho do dataset, com apenas 400 entradas por coluna,
 pode não ser representativo o suficiente para generalizações em larga escala. Além disso, fatores como o viés dos dados
 (mais veículos de origem norte-americana) podem ter influenciado os resultados.
-
-\section{Trabalhos Relacionados}
-Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{ref3}) são exemplos de trabalhos relacionados com este dataset.
-Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
-em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
-um estudo mais rigoroso.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \printbibliography
