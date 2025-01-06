@@ -95,7 +95,7 @@ de confusão, que compara as previsões do modelo com os valores reais. As métr
 \end{itemize}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Tree}
+\subsection{Tree (\cite{tree})}
 É um modelo baseado numa estrutura hierárquica em forma de árvore, como é possivel ver na tabela \ref{tab:conf_matrix_tree}.
 Cada nó representa uma condição ou regra (geralmente um atributo do conjunto de dados), e os ramos dividem os dados com base
 nessa regra. O objetivo é chegar a uma decisão ou classificação no final de cada ramo (folha). É simples, interpretável e
@@ -115,15 +115,14 @@ nessa regra. O objetivo é chegar a uma decisão ou classificação no final de 
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Tree}
 	\label{tab:conf_matrix_tree}
-	
+
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Random Forest}
-Este algoritmo é um conjunto de árvores de decisão, como é possivel ver na tabela \ref{tab:conf_matrix_forest}. Cria várias árvores
-independentes, cada uma treinada com um subconjunto dos dados e das features (atributos) selecionados aleatoriamente. No final,
-combina os resultados (por votação, na classificação, ou pela média, na regressão) para melhorar a precisão e reduzir o risco de
-overfitting, comparado a uma única árvore.
+\subsection{Random Forest (\cite{forest})}
+Este algoritmo é um conjunto de árvores, como é possivel ver na tabela \ref{tab:conf_matrix_forest}. Cria várias árvores
+independentes, cada uma treinada com um subconjunto dos dados e dos atributos selecionados aleatoriamente. No final,
+combina os resultados para melhorar a precisão e reduzir o risco de overfitting, comparado a uma única árvore.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lcccc}
@@ -137,14 +136,14 @@ overfitting, comparado a uma única árvore.
 		\textbf{Total}          & 56               & 88             & 248          & 392            \\
 		\bottomrule
 	\end{tabular}
-	\caption{Matriz de Confusão do Algoritmo Tree}
+	\caption{Matriz de Confusão do Algoritmo Random Forest}
 	\label{tab:conf_matrix_forest}
 
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Logistic Regression}
-Apesar do nome, é um método usado principalmente para classificação, , como é possivel ver na tabela \ref{tab:conf_matrix_logistic}.
+\subsection{Logistic Regression (\cite{regression})}
+Apesar do nome, é um método usado principalmente para classificação, como é possivel ver na tabela \ref{tab:conf_matrix_logistic}.
 Modela a probabilidade de um resultado pertencente a uma classe específica, usando uma função logística. É simples, rápido e eficaz
 em problemas de classificação binária, embora também possa ser estendido para múltiplas classes.
 \begin{table}[!ht]
@@ -166,7 +165,7 @@ em problemas de classificação binária, embora também possa ser estendido par
 \end{table}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-\subsection{Neural Network}
+\subsection{Neural Network (\cite{neural})}
 Inspiradas pelo cérebro humano, consistem em camadas de "neurónios" interligados, como é possivel ver na tabela \ref{tab:conf_matrix_neural}.
 Cada neurónio recebe entradas, aplica uma ponderação e uma função de ativação, e passa o resultado para os neurónios da camada seguinte.
 São altamente versáteis e podem lidar com problemas complexos, como reconhecimento de imagens ou processamento de linguagem natural,
@@ -263,23 +262,23 @@ Esta métrica possuí a seguinte formulação:
 Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
-Nas imagens seguintes, é possível visualizar as curvas ROC dos diferentes algoritmos, para as diferentes regiões de origem dos veículos.
-
-Na imagem \ref{fig:roc_eua}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem nos EUA.
+Na figura \ref{fig:roc_eua}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem nos EUA.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_EUA.png}
 	\caption{Curva ROC dos Algoritmos - EUA}
 	\label{fig:roc_eua}
 \end{figure}
-Na imagem \ref{fig:roc_eu}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem na Europa.
+
+Na figura \ref{fig:roc_eu}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem na Europa.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_EU.png}
 	\caption{Curva ROC dos Algoritmos - Europa}
 	\label{fig:roc_eu}
 \end{figure}
-Na imagem \ref{fig:roc_jp}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem no Japão.
+
+Na figura \ref{fig:roc_jp}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem no Japão.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Resources/ROC_JP.png}
@@ -291,9 +290,9 @@ Na imagem \ref{fig:roc_jp}, é possível visualizar a curva ROC dos diferentes a
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Trabalhos Relacionados}
 Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{ref3}) são exemplos de trabalhos relacionados com este dataset.
-Estes trabalhos tem outras abordagens e análises ao dataset, que tem como objetivo analisar as diferentes caracteristicas dos veículos
-em vez de diferentes algoritmos, mesmo assim, são trabalhos foram úteis para uma compreensão mais aprofundada do dataset assim garantindo
-um estudo mais rigoroso.
+Estes trabalhos tem uma abordagem e análise ao dataset do ponte de vista de estruturas de dados e algoritmos, que tem como objetivo analisar as
+diferentes caracteristicas dos veículos, verificando quais os atributos dos automóveis de maior importância e com maiores relações, assim permitindo
+uma compreensão mais aprofundada do dataset assim garantindo um estudo mais rigoroso.
 
 \section{Conclusões}
 Concluimos que embora o algoritmo \textit{Tree} seja fácil de interpretar, apresenta limitações em datasets com alta variabilidade,
