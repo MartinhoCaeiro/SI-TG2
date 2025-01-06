@@ -79,8 +79,8 @@ A metodologia adotada neste estudo envolveu as seguintes etapas principais:
 	\item \textbf{Seleção dos algoritmos:} Foram escolhidos algoritmos representativos de diferentes abordagens, como árvores de decisão, regressão e redes neurais.
 	\item \textbf{Preparação dos dados:} Foi descartado o ano de fabrico, e as variáveis foram normalizadas para melhorar a performance dos algoritmos.
 	\item \textbf{Treino dos modelos:} Cada algoritmo foi treinado utilizando um conjunto de treino com validação cruzada.
-	\item \textbf{Teste dos modelos:} Os modelos foram testados com um conjunto de teste para avaliar a sua capacidade de generalização, evitando assim bias 
-	e outliers.
+	\item \textbf{Teste dos modelos:} Os modelos foram testados com um conjunto de teste para avaliar a sua capacidade de generalização, evitando assim bias
+	      e outliers.
 	\item \textbf{Avaliação dos modelos:} As métricas de desempenho (precisão, recall, AUC, entre outras) foram calculadas para comparar os algoritmos.
 	\item \textbf{Análise dos resultados:} Os resultados foram analisados de forma qualitativa e quantitativa, destacando os pontos fortes e fracos de cada modelo.
 \end{enumerate}
@@ -108,9 +108,9 @@ nessa regra. O objetivo é chegar a uma decisão ou classificação no final de 
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 29               & 9             & 10           & 48             \\
-		Japão                   & 16               & 34             & 5           & 55             \\
-		EUA                     & 12               & 6             & 154          & 172            \\
+		Europeu                 & 29               & 9              & 10           & 48             \\
+		Japão                   & 16               & 34             & 5            & 55             \\
+		EUA                     & 12               & 6              & 154          & 172            \\
 		\midrule
 		\textbf{Total}          & 57               & 49             & 169          & 275            \\
 		\bottomrule
@@ -131,8 +131,8 @@ combina os resultados para melhorar a precisão e reduzir o risco de overfitting
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 25               & 16             & 7           & 48             \\
-		Japão                   & 12                & 34             & 9            & 55             \\
+		Europeu                 & 25               & 16             & 7            & 48             \\
+		Japão                   & 12               & 34             & 9            & 55             \\
 		EUA                     & 11               & 7              & 154          & 172            \\
 		\midrule
 		\textbf{Total}          & 48               & 57             & 170          & 275            \\
@@ -142,6 +142,7 @@ combina os resultados para melhorar a precisão e reduzir o risco de overfitting
 	\label{tab:conf_matrix_forest}
 
 \end{table}
+\newline
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{Logistic Regression (\cite{regression})}
@@ -154,9 +155,9 @@ em problemas de classificação binária, embora também possa ser estendido par
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 25               & 18             & 5           & 48             \\
-		Japão                   & 12               & 34             & 9           & 55             \\
-		EUA                     & 4               & 14             & 154          & 172            \\
+		Europeu                 & 25               & 18             & 5            & 48             \\
+		Japão                   & 12               & 34             & 9            & 55             \\
+		EUA                     & 4                & 14             & 154          & 172            \\
 		\midrule
 		\textbf{Total}          & 41               & 66             & 168          & 275            \\
 		\bottomrule
@@ -178,11 +179,11 @@ mas requerem mais dados e poder computacional.
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 20               & 22             & 6           & 48             \\
-		Japão                   & 12                & 33             & 10           & 55             \\
-		EUA                     & 7               & 11             & 154          & 172            \\
+		Europeu                 & 20               & 22             & 6            & 48             \\
+		Japão                   & 12               & 33             & 10           & 55             \\
+		EUA                     & 7                & 11             & 154          & 172            \\
 		\midrule
-		\textbf{Total}          & 39               & 66             & 170          &   275          \\
+		\textbf{Total}          & 39               & 66             & 170          & 275            \\
 		\bottomrule
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
@@ -195,7 +196,7 @@ mas requerem mais dados e poder computacional.
 Como podemos visualizar na tabela \ref{tab:evaluation_results}, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
 a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados em termos de acurácia de classificação (CA), precisão e sensibilidade.
 O algoritmo \textit{Logistic Regression} obteve resultados semelhantes ao \textit{Random Forest}, enquanto o \textit{Neural Network} apresentou o pior desempenho.
-Outra observação que é importante destacar é que o algoritmo \textit{Logistic Regression} obteve um desempenho superior no contexto de F1 Score e MCC, sendo isto mais 
+Outra observação que é importante destacar é que o algoritmo \textit{Logistic Regression} obteve um desempenho superior no contexto de F1 Score e MCC, sendo isto mais
 importante para problemas de classificação, mostrando no geral um melhor desempenho que os algoritmos de \textit{Random Forest} e \textit{Neural Network}.
 \begin{table}[!ht]
 	\centering
@@ -206,7 +207,7 @@ importante para problemas de classificação, mostrando no geral um melhor desem
 			\midrule
 			Tree                & 0.833        & 0.789       & 0.792       & 0.798              & 0.789           & 0.613        \\
 			Logistic Regression & 0.909        & 0.775       & 0.777       & 0.783              & 0.775           & 0.587        \\
-			Random Forest       & 0.921        & 0.775        & 0.776       & 0.777              & 0.775           & 0.584        \\
+			Random Forest       & 0.921        & 0.775       & 0.776       & 0.777              & 0.775           & 0.584        \\
 			Neural Network      & 0.900        & 0.753       & 0.753       & 0.756              & 0.753           & 0.544        \\
 			\bottomrule
 		\end{tabular}
