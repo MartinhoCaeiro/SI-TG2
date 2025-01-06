@@ -79,6 +79,8 @@ A metodologia adotada neste estudo envolveu as seguintes etapas principais:
 	\item \textbf{Seleção dos algoritmos:} Foram escolhidos algoritmos representativos de diferentes abordagens, como árvores de decisão, regressão e redes neurais.
 	\item \textbf{Preparação dos dados:} Foi descartado o ano de fabrico, e as variáveis foram normalizadas para melhorar a performance dos algoritmos.
 	\item \textbf{Treino dos modelos:} Cada algoritmo foi treinado utilizando um conjunto de treino com validação cruzada.
+	\item \textbf{Teste dos modelos:} Os modelos foram testados com um conjunto de teste para avaliar a sua capacidade de generalização, evitando assim bias 
+	e outliers.
 	\item \textbf{Avaliação dos modelos:} As métricas de desempenho (precisão, recall, AUC, entre outras) foram calculadas para comparar os algoritmos.
 	\item \textbf{Análise dos resultados:} Os resultados foram analisados de forma qualitativa e quantitativa, destacando os pontos fortes e fracos de cada modelo.
 \end{enumerate}
@@ -106,11 +108,11 @@ nessa regra. O objetivo é chegar a uma decisão ou classificação no final de 
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 47               & 11             & 10           & 68             \\
-		Japão                   & 14               & 59             & 6            & 79             \\
-		EUA                     & 11               & 11             & 223          & 245            \\
+		Europeu                 & 29               & 9             & 10           & 48             \\
+		Japão                   & 16               & 34             & 5           & 55             \\
+		EUA                     & 12               & 6             & 154          & 172            \\
 		\midrule
-		\textbf{Total}          & 72               & 81             & 239          & 392            \\
+		\textbf{Total}          & 57               & 49             & 169          & 275            \\
 		\bottomrule
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Tree}
@@ -129,11 +131,11 @@ combina os resultados para melhorar a precisão e reduzir o risco de overfitting
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 35               & 18             & 15           & 68             \\
-		Japão                   & 9                & 63             & 7            & 79             \\
-		EUA                     & 12               & 7              & 226          & 245            \\
+		Europeu                 & 25               & 16             & 7           & 48             \\
+		Japão                   & 12                & 34             & 9            & 55             \\
+		EUA                     & 11               & 7              & 154          & 172            \\
 		\midrule
-		\textbf{Total}          & 56               & 88             & 248          & 392            \\
+		\textbf{Total}          & 48               & 57             & 170          & 275            \\
 		\bottomrule
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Random Forest}
@@ -152,11 +154,11 @@ em problemas de classificação binária, embora também possa ser estendido par
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 27               & 29             & 12           & 68             \\
-		Japão                   & 14               & 54             & 11           & 79             \\
-		EUA                     & 13               & 15             & 217          & 245            \\
+		Europeu                 & 25               & 18             & 5           & 48             \\
+		Japão                   & 12               & 34             & 9           & 55             \\
+		EUA                     & 4               & 14             & 154          & 172            \\
 		\midrule
-		\textbf{Total}          & 54               & 98             & 242          & 392            \\
+		\textbf{Total}          & 41               & 66             & 168          & 275            \\
 		\bottomrule
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Logistic Regression}
@@ -176,11 +178,11 @@ mas requerem mais dados e poder computacional.
 		\toprule
 		\textbf{Atual/Previsão} & \textbf{Europeu} & \textbf{Japão} & \textbf{EUA} & \textbf{Total} \\
 		\midrule
-		Europeu                 & 31               & 24             & 13           & 68             \\
-		Japão                   & 9                & 56             & 14           & 79             \\
-		EUA                     & 10               & 16             & 219          & 245            \\
+		Europeu                 & 20               & 22             & 6           & 48             \\
+		Japão                   & 12                & 33             & 10           & 55             \\
+		EUA                     & 7               & 11             & 154          & 172            \\
 		\midrule
-		\textbf{Total}          & 50               & 96             & 246          & 392            \\
+		\textbf{Total}          & 39               & 66             & 170          &   275          \\
 		\bottomrule
 	\end{tabular}
 	\caption{Matriz de Confusão do Algoritmo Neural Network}
@@ -192,6 +194,9 @@ mas requerem mais dados e poder computacional.
 \section{Comparações finais}
 Como podemos visualizar na tabela \ref{tab:evaluation_results}, o algoritmo \textit{Random Forest} obteve os melhores resultados avaliando a área sobre
 a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados em termos de acurácia de classificação (CA), precisão e sensibilidade.
+O algoritmo \textit{Logistic Regression} obteve resultados semelhantes ao \textit{Random Forest}, enquanto o \textit{Neural Network} apresentou o pior desempenho.
+Outra observação que é importante destacar é que o algoritmo \textit{Logistic Regression} obteve um desempenho superior no contexto de F1 Score e MCC, sendo isto mais 
+importante para problemas de classificação, mostrando no geral um melhor desempenho que os algoritmos de \textit{Random Forest} e \textit{Neural Network}.
 \begin{table}[!ht]
 	\centering
 	\resizebox{0.5\textwidth}{!}{
@@ -199,10 +204,10 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 			\toprule
 			\textbf{Algoritmo}  & \textbf{AUC} & \textbf{CA} & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{MCC} \\
 			\midrule
-			Tree                & 0.876        & 0.839       & 0.841       & 0.843              & 0.839           & 0.706        \\
-			Random Forest       & 0.943        & 0.827       & 0.823       & 0.822              & 0.827           & 0.676        \\
-			Neural Network      & 0.917        & 0.781       & 0.778       & 0.782              & 0.781           & 0.593        \\
-			Logistic Regression & 0.901        & 0.760       & 0.759       & 0.763              & 0.760           & 0.560        \\
+			Tree                & 0.833        & 0.789       & 0.792       & 0.798              & 0.789           & 0.613        \\
+			Logistic Regression & 0.909        & 0.775       & 0.777       & 0.783              & 0.775           & 0.587        \\
+			Random Forest       & 0.921        & 0.775        & 0.776       & 0.777              & 0.775           & 0.584        \\
+			Neural Network      & 0.900        & 0.753       & 0.753       & 0.756              & 0.753           & 0.544        \\
 			\bottomrule
 		\end{tabular}
 	}
@@ -216,81 +221,86 @@ a curva do gráfico ROC (AUC), e o algoritmo Tree obteve os melhores resultados 
 Estas métricas são importantes para avaliar o desempenho dos algoritmos, e a sua interpretação pode variar consoante o contexto do problema.
 A aplicação \textit{Orange} forneceu automaticamente estas métricas, porém detalhando cada uma delas, obtemos o seguinte:
 \subsection{Acurácia de Classificação (CA)}
-A CA, como podemos visualizar na equação 1, é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados
+A CA, como podemos visualizar na equação \ref{eq:accuracy}, é a proporção de observações corretamente classificadas pelo modelo. É uma métrica geral de desempenho, mas pode ser enganadora em conjuntos de dados
 desequilibrados.
 \begin{equation}
 	CA = \frac{TP + TN}{TP + TN + FP + FN}
+	\label{eq:accuracy}
 \end{equation}
 Onde TN é o número de verdadeiros negativos e FN é o número de falsos negativos.
 \subsection{Precisão}
-A precisão, como podemos visualizar na equação 2, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas.
+A precisão, como podemos visualizar na equação \ref{eq:precision}, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas.
 \begin{equation}
 	Precision = \frac{TP}{TP + FP}
+	\label{eq:precision}
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
 \subsection{Sensibilidade/Recall}
-A sensibilidade, como podemos visualizar na equação 3, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
+A sensibilidade, como podemos visualizar na equação \ref{eq:recall}, é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
 \begin{equation}
 	Recall = \frac{TP}{TP + FN}
+	\label{eq:recall}
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FN é o número de falsos negativos.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \subsection{F1 Score}
-O F1 Score, como podemos visualizar na equação 4, é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e
+O F1 Score, como podemos visualizar na equação \ref{eq:f1}, é a média harmónica da precisão e da sensibilidade. É útil quando as classes estão desequilibradas, pois penaliza mais os falsos negativos e
 falsos positivos.
 \begin{equation}
 	F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}
+	\label{eq:f1}
 \end{equation}
 Onde Precision é a proporção de observações corretamente classificadas como positivas em relação ao total de observações classificadas como positivas e Recall
 é a proporção de observações corretamente classificadas como positivas em relação ao total de observações reais positivas.
 
 \subsection{Coeficiente de Correlação de Matthews (MCC)}
-O MCC, como podemos visualizar na equação 5, é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
+O MCC, como podemos visualizar na equação \ref{eq:mcc}, é uma métrica que varia entre -1 e 1, onde 1 indica uma previsão perfeita, 0 indica uma previsão aleatória e -1 indica uma previsão inversa.
 \begin{equation}
 	\footnotesize
 	MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
+	\label{eq:mcc}
 \end{equation}
 Onde TP é o número de verdadeiros positivos, TN é o número de verdadeiros negativos, FP é o número de falsos positivos e FN é o número de falsos negativos.
 
 \subsection{Área sobre a Curva (AUC)}
-A AUC, como podemos visualizar na equação 6, é uma métrica que avalia a capacidade do modelo de distinguir entre classes positivas e negativas. Quanto maior o valor, melhor o desempenho do modelo.
+A AUC, como podemos visualizar na equação \ref{eq:auc}, é uma métrica que avalia a capacidade do modelo de distinguir entre classes positivas e negativas. Quanto maior o valor, melhor o desempenho do modelo.
 Esta métrica possuí a seguinte formulação:
 \begin{equation}
 	AUC = \frac{1 + TP - FP}{2}
+	\label{eq:auc}
 \end{equation}
 Onde TP é o número de verdadeiros positivos e FP é o número de falsos positivos.
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 Na figura \ref{fig:roc_eua}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem nos EUA.
-\begin{figure}[!ht]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Resources/ROC_EUA.png}
+	\includegraphics[width=0.3\textwidth]{Resources/ROC_EUA.png}
 	\caption{Curva ROC dos Algoritmos - EUA}
 	\label{fig:roc_eua}
 \end{figure}
 
 Na figura \ref{fig:roc_eu}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem na Europa.
-\begin{figure}[!ht]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Resources/ROC_EU.png}
+	\includegraphics[width=0.3\textwidth]{Resources/ROC_EU.png}
 	\caption{Curva ROC dos Algoritmos - Europa}
 	\label{fig:roc_eu}
 \end{figure}
-
+\newpage
 Na figura \ref{fig:roc_jp}, é possível visualizar a curva ROC dos diferentes algoritmos para os veículos de origem no Japão.
-\begin{figure}[!ht]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Resources/ROC_JP.png}
+	\includegraphics[width=0.3\textwidth]{Resources/ROC_JP.png}
 	\caption{Curva ROC dos Algoritmos - Japão}
 	\label{fig:roc_jp}
 \end{figure}
-\newpage
 
 %----------------------------------------------------------------------------------------------------------------------------------------------
 \section{Trabalhos Relacionados}
 Os trabalhos "Automobile EDA" (\cite{ref2}) e "EDA CAR INFORMATION DATA" (\cite{ref3}) são exemplos de trabalhos relacionados com este dataset.
-Estes trabalhos tem uma abordagem e análise ao dataset do ponte de vista de estruturas de dados e algoritmos, que tem como objetivo analisar as
+Estes trabalhos tem uma abordagem e análise ao dataset do ponto de vista de estruturas de dados e algoritmos, que tem como objetivo analisar as
 diferentes caracteristicas dos veículos, verificando quais os atributos dos automóveis de maior importância e com maiores relações, assim permitindo
 uma compreensão mais aprofundada do dataset assim garantindo um estudo mais rigoroso.
 
