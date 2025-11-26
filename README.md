@@ -164,3 +164,7 @@ I can add a notebook `notebooks/reproduce.ipynb` with step-by-step reproduction 
 Instituto Politécnico de Beja — Escola Superior de Tecnologia e Gestão
 
 ---
+
+## License
+
+- This repository is licensed under the GNU General Public License v3.0 (GPL-3.0).
